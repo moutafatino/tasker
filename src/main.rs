@@ -6,5 +6,5 @@ fn main() {
 
     app.add_task("Test task");
 
-    println!("Task");
+    app.list_tasks();
 }
