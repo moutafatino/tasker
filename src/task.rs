@@ -51,4 +51,16 @@ impl TaskManager {
             println!("[{}] - {} - {}", task.id, task.title, task.status);
         }
     }
+
+    pub fn cmd_help(&self) {
+        let commands = vec![
+            ("add <title>", "- Add a new task"),
+            ("list", "- List tasks"),
+        ];
+
+        println!("Available Commands:");
+        for (cmd, desc) in commands {
+            println!("   {:<30} {}", cmd, desc);
+        }
+    }
 }
