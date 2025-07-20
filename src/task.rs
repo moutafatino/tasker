@@ -25,6 +25,7 @@ impl fmt::Display for Status {
 pub struct TaskManager {
     tasks: HashMap<u32, Task>,
     next_id: u32,
+    is_running: bool,
 }
 
 impl TaskManager {
@@ -32,7 +33,12 @@ impl TaskManager {
         Self {
             tasks: HashMap::new(),
             next_id: 1,
+            is_running: true,
         }
+    }
+
+    pub fn is_running(&self) -> bool {
+        self.is_running
     }
 
     pub fn add_task(&mut self, title: &str) {
